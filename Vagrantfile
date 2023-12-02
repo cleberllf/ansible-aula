@@ -11,7 +11,6 @@ machines = {
 }
 
 Vagrant.configure("2") do |config|
-
   machines.each do |name, conf|
     config.vm.define "#{name}" do |machine|
       machine.vm.box = "#{conf["image"]}"

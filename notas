@@ -12,3 +12,6 @@ ansible linux -m setup -a "filter=ansible_os_family,ansible_all_ipv4_addresses,a
 
 Configurar a variável de ambiente com o caminho do arquivo de configuração para o Ansible:
 export ANSIBLE_CONFIG=./ansible.cfg
+
+Verificar variáveis
+ansible linux -m debug -a var=ansible_user

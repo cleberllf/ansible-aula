@@ -14,11 +14,11 @@ ansible_password=vagrant
 rocky
 debian
 
-[rocky]
-192.168.0.250
+[redhat]
+rocky9 ansible_host=192.168.0.250
 
 [debian]
-192.168.0.251
+debian12 ansible_host=192.168.0.251
 
 #[windows]
-#192.168.0.252
+#winserver2012 ansible_host=192.168.0.252
