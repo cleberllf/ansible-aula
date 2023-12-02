@@ -1,0 +1,18 @@
+---
+bandas:
+  - catedral
+  - "oficina g3"
+  - "quatro por um"
+  - "novo som"
+  - "som e louvor"
+
+cadastro:
+  nome: Cleber
+  sobrenome: Lima
+  idade: 36
+  endereco:
+    cidade: SSA
+    estado: BA
+    rua: "avenida acm"
+  bandas-preferidas: "{{ bandas }}"
+...

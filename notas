@@ -1,0 +1,14 @@
+Portas do serviço WinRM:
+5985 (sem SSL)
+5986 (com SSL)
+
+Gerar hash para senha com o ansible:
+ansible all -i localhost, -m debug -a "msg={{ 'Senha123' | password_hash('sha512', 'mysecretsalt') }}"
+
+Verificar família da distribuição do SO da(s) máquina(s):
+ansible linux -m setup -a "filter=ansible_os_family"
+
+ansible linux -m setup -a "filter=ansible_os_family,ansible_all_ipv4_addresses,ansible_hostname"
+
+Configurar a variável de ambiente com o caminho do arquivo de configuração para o Ansible:
+export ANSIBLE_CONFIG=./ansible.cfg

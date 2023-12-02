@@ -1,0 +1,3 @@
+ # Este arquivo serve para apontar as chaves privadas usadas para autenticação por par de chaves
+ # Deve estar localizado em ~/.ssh/
+ IdentityFile "~/.ssh/id_rsa_ansible"
