@@ -15,3 +15,22 @@ export ANSIBLE_CONFIG=./ansible.cfg
 
 Verificar variáveis
 ansible linux -m debug -a var=ansible_user
+
+Targets Windows:
+# Verifica a versão do PowerShell
+get-host
+# Verifica a versão do WinRM
+winrm id
+# Verifica o estado do serviço WinRM
+winrm enumerate winrm/config/listener
+# Verifica as permissões de usuário para o serviço WinRM
+winrm configSDDL default
+# Verifica todas as configurações do WinRM
+winrm get winrm/config
+# Altera a configuração de método de autenticação do WinRM para o basic
+# Obs.: Método não recomendado, por passar a senha em texto plano na conexão
+Set-Item -Path WSMan:\localhost\Service\Auth\basic -Value $true
+# Altera a configuração para aceitar conexão não criptografada no WinRM
+Set-Item -Path WSMan:\localhost\Service\AllowUnencrypted -Value $true
+# Verifica as configurações do serviço WinRM
+winrm get winrm/config/service
