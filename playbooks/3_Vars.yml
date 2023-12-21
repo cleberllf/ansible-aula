@@ -1,0 +1,10 @@
+---
+
+- name: Testando variáveis
+  hosts: rocky9
+  tasks:
+    - name: DEBUG
+      ansible.builtin.debug:
+        msg: "Mensagem de teste"
+
+...

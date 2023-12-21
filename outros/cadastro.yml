@@ -1,4 +1,5 @@
 ---
+# Arquivo de prática da estrutura do YAML
 bandas:
   - catedral
   - "oficina g3"
@@ -13,6 +14,6 @@ cadastro:
   endereco:
     cidade: SSA
     estado: BA
-    rua: "avenida acm"
+    rua: "Avenida Luís Viana Filho"
   bandas-preferidas: "{{ bandas }}"
 ...

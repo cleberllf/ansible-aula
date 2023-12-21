@@ -20,5 +20,5 @@ rocky9 ansible_host=192.168.0.250
 [debian]
 debian12 ansible_host=192.168.0.251
 
-[windows]
-winserver12 ansible_host=192.168.0.252
+#[windows]
+#winserver12 ansible_host=192.168.0.252

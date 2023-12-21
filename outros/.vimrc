@@ -1,4 +1,5 @@
 " Este arquivo serve para atribuir configurações ao VIM
+" Deve estar localizado no home do usuário
 syntax on                   " modo visual/colorido ativo
 set showmode                " apresenta o modo de utilizacao atual (command/insert)
 set ignorecase              " ignora case sensitive durante a busca
