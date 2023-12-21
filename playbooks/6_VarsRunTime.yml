@@ -1,0 +1,9 @@
+---
+- name: Variáveis em tempo de execução
+  hosts: rocky9
+  tasks:
+    - name: DEBUG | Variáveis em tempo de execução
+      ansible.builtin.debug:
+        msg: "{{ message }}"
+...
+#ansible-playbook --extra-vars message="Oi" playbooks/6_VarsRunTime.yml

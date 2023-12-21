@@ -1,16 +1,8 @@
 ---
 - name: Testando variáveis
   hosts: rocky9
-  vars:
-    message: "nova mensagem"
-    packages:
-      - htop
-      - vim
+  vars_files: ./varsfiles.yml
   tasks:
-    - name: DEBUG | {{ message }}
-      ansible.builtin.debug:
-        msg: "{{ message }}"
-
     - name: DNF | Install packages
       ansible.builtin.dnf:
         name: "{{ packages }}"
