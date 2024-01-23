@@ -1,0 +1,16 @@
+---
+
+- name: Ansible Register
+  hosts: all
+  tasks:
+    - name: SISOP | Find files
+      find:
+        path: /tmp
+        patterns: '*.cfg'
+      register: output
+
+    - name: SISOP | Show files
+      debug:
+        msg: "{{ output }}"
+
+...

@@ -2,6 +2,7 @@ Portas do serviço WinRM:
 5985 (sem SSL)
 5986 (com SSL)
 
+
 Gerar hash para senha com o ansible:
 ansible all -i localhost, -m debug -a "msg={{ 'Senha123' | password_hash('sha512', 'mysecretsalt') }}"
 
