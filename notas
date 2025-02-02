@@ -2,22 +2,7 @@ Portas do serviço WinRM:
 5985 (sem SSL)
 5986 (com SSL)
 
-
-Gerar hash para senha com o ansible:
-ansible all -i localhost, -m debug -a "msg={{ 'Senha123' | password_hash('sha512', 'mysecretsalt') }}"
-
-Verificar família da distribuição do SO da(s) máquina(s):
-ansible linux -m setup -a "filter=ansible_os_family"
-
-ansible linux -m setup -a "filter=ansible_os_family,ansible_all_ipv4_addresses,ansible_hostname"
-
-Configurar a variável de ambiente com o caminho do arquivo de configuração para o Ansible:
-export ANSIBLE_CONFIG=./ansible.cfg
-
-Verificar variáveis
-ansible linux -m debug -a var=ansible_user
-
-Targets Windows:
+PARA TARGETS WINDOWS:
 # Verifica a versão do PowerShell
 get-host
 # Verifica a versão do WinRM
@@ -35,3 +20,20 @@ Set-Item -Path WSMan:\localhost\Service\Auth\basic -Value $true
 Set-Item -Path WSMan:\localhost\Service\AllowUnencrypted -Value $true
 # Verifica as configurações do serviço WinRM
 winrm get winrm/config/service
+
+Gerar hash para senha com o ansible:
+ansible all -i localhost, -m debug -a "msg={{ 'Senha123' | password_hash('sha512', 'mysecretsalt') }}"
+
+Verificar família da distribuição do SO da(s) máquina(s):
+ansible linux -m setup -a "filter=ansible_os_family"
+
+ansible linux -m setup -a "filter=ansible_os_family,ansible_all_ipv4_addresses,ansible_hostname"
+
+Configurar a variável de ambiente com o caminho do arquivo de configuração para o Ansible:
+export ANSIBLE_CONFIG=./ansible.cfg
+
+Verificar variáveis:
+ansible linux -m debug -a var=ansible_user
+
+Cria estrutura de diretórios e arquivos de uma role:
+ansible-galaxy init nome_da_role

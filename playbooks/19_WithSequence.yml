@@ -1,0 +1,19 @@
+---
+- name: Sequence with_sequence
+  hosts: rocky9
+  tasks:
+    - name: USER | Add User
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        groups: "wheel"
+      with_sequence: start=1 end=3 format=user%x
+
+# OUTRA FORMA DE FAZER O MESMO QUE O EXEMPLO ACIMA
+#    - name: USER | Add User
+#      ansible.builtin.user:
+#        name: "user{{ item }}"
+#        state: present
+#        groups: "wheel"
+#      loop: "{{ range(1, 4) | list }}"
+...

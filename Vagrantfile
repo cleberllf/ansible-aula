@@ -7,7 +7,7 @@ machines = {
   # Debian 12
   "debian" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "251", "image" => "generic/debian12"},
   # Windows Server 2016
-  "winserver" => {"memory" => "4096", "cpu" => "2", "clone" => "true", "ipA" => "252", "image" => "mwrock/Windows2016"}
+  #"winserver" => {"memory" => "4096", "cpu" => "2", "clone" => "true", "ipA" => "252", "image" => "mwrock/Windows2016"}
 }
 
 Vagrant.configure("2") do |config|

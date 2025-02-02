@@ -1,0 +1,9 @@
+---
+
+- name: DNF | Update Systems
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+...

@@ -1,0 +1,7 @@
+---
+# tasks file for temp
+- name: DNF | Install {{ packages }}
+  ansible.builtin.dnf:
+    name: {{ packages }}
+    state: latest
+...

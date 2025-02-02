@@ -1,0 +1,11 @@
+---
+
+- name: APT | Update Cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: APT | Update Systems
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+...
