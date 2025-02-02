@@ -1,0 +1,20 @@
+---
+- name: Block Testing
+  hosts: rocky9
+  tasks:
+    - block:
+        - ansible.builtin.debug:
+            msg: "### EXECUTADO NORMALMENTE ###"
+        - name: Simulando erros
+          ansible.builtin.shell: ./configure
+          args:
+            chdir: /tmp
+        - ansible.builtin.debug:
+            msg: "NUNCA SERÁ EXECUTADO"
+      rescue:
+        - ansible.builtin.debug:
+            msg: "ERROR - FALHA NO TARGET {{ inventory_hostname }}"
+      always:
+        - name: SISOP | Update System
+          ansible.builtin.dnf: name=* state=latest
+...

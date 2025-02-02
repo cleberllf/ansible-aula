@@ -1,0 +1,16 @@
+---
+- name: Ansible Loop with Multiple Options
+  hosts: rocky9
+  tasks:
+    - name: USER | Add User
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        state: present
+        comment: "{{ item.comment }}"
+        groups: "wheel"
+        shell: "{{ item.shell }}"
+      loop:
+        - { name: 'eddie', comment: 'Van Halen', shell: '/bin/bash' }
+        - { name: 'dime', comment: 'Pantera', shell: '/bin/sh' }
+        - { name: 'taylor', comment: 'Foo Fighters', shell: '/bin/false' }
+...
