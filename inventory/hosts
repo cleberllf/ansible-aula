@@ -1,5 +1,5 @@
 [all:vars]
-#ansible_user=vagrant
+ansible_user=vagrant
 ansible_password=vagrant
 # Ignora o pedido de aceitar a chave na primeira vez que conecta
 #ansible_ssh_common_args='-o StrictHostKeyChecking=no'
@@ -16,9 +16,10 @@ debian
 
 [redhat]
 rocky9 ansible_host=192.168.0.250
+centos7 ansible_host=192.168.0.251
 
 [debian]
-debian12 ansible_host=192.168.0.251
+debian12 ansible_host=192.168.0.252
 
 #[windows]
-#winserver12 ansible_host=192.168.0.252
+#winserver12 ansible_host=192.168.0.253

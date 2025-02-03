@@ -4,10 +4,15 @@
 machines = {
   # Rocky Linux 9
   "rocky" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "250", "image" => "generic/rocky9"},
+  #"rocky" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "250", "image" => "rockylinux/9"},
+  # CentOS 7
+  "centos" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "251", "image" => "generic/centos7"},
+  #"centos" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "251", "image" => "centos/7"},
   # Debian 12
-  "debian" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "251", "image" => "generic/debian12"},
+  "debian" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "252", "image" => "generic/debian12"},
+  #"debian" => {"memory" => "1024", "cpu" => "1", "clone" => "true", "ipA" => "252", "image" => "debian/bookworm64"},
   # Windows Server 2016
-  #"winserver" => {"memory" => "4096", "cpu" => "2", "clone" => "true", "ipA" => "252", "image" => "mwrock/Windows2016"}
+  #"winserver" => {"memory" => "4096", "cpu" => "2", "clone" => "true", "ipA" => "253", "image" => "mwrock/Windows2016"}
 }
 
 Vagrant.configure("2") do |config|
