@@ -1,5 +1,0 @@
----
-# defaults file for temp
-packages:
- - tcpdump
- 

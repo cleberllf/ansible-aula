@@ -1,0 +1,9 @@
+---
+- name: Main Playbook
+  hosts: all
+  roles:
+#   - linux-update
+#   - install-packages
+   - manage-files
+#   - using-templates
+...

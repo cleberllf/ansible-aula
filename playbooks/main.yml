@@ -1,7 +1,0 @@
----
-- name: Main Playbook
-  hosts: all
-  roles:
-   #- linux-update
-   - temp
-...

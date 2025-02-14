@@ -20,8 +20,10 @@ Vagrant.configure("2") do |config|
     config.vm.define "#{name}" do |machine|
       machine.vm.box = "#{conf["image"]}"
       machine.vm.hostname = "#{name}"
-      machine.vm.network "private_network", ip: "192.168.0.#{conf["ipA"]}"
-      machine.vm.network "public_network", ip: "192.168.31.#{conf["ipA"]}"
+      #machine.vm.network "private_network", ip: "192.168.100.#{conf["ipA"]}"
+      #machine.vm.network "public_network", ip: "192.168.31.#{conf["ipA"]}"
+      machine.vm.network "public_network", bridge: nil, ip: "192.168.31.#{conf["ipA"]}"
+      #machine.vm.network "public_network", bridge: `VBoxManage.exe list bridgedifs | awk '/Name:/ {print substr($0, index($0,$2))}' | head -n 1`.strip, ip: "192.168.31.#{conf["ipA"]}"
       machine.vm.provider "virtualbox" do |vb|
         vb.name = "#{name}"
         vb.memory = conf["memory"]

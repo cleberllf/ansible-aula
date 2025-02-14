@@ -1,0 +1,4 @@
+---
+# vars file for install-packages
+packages:
+ - mariadb

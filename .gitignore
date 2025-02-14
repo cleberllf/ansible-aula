@@ -20,13 +20,12 @@
 .history
 .ionide
 
-### Vagrant ###
+### Vagrant and Vagrant Patch ###
 # General
 .vagrant/*
 .vagrant
+*.box
+.ruby-lsp
 
 # Log files (if you are creating logs in debug mode, uncomment this)
 *.log
-
-### Vagrant Patch ###
-*.box
