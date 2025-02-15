@@ -1,0 +1,15 @@
+---
+
+ssh_key: 
+instance_type: 
+vpc_subnet_id: 
+image_id: 
+region: 
+
+tag_name:
+tag_ambiente:
+tag_owner:
+
+disk_size:
+
+...

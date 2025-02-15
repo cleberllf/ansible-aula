@@ -1,0 +1,38 @@
+---
+
+- name: AWS | Creating EC2 Instance
+  amazon.aws.ec2_instance:
+    profile: "{{ aws_profile }}"
+    region: "{{ region }}"
+    key_name: "{{ ssh_key }}"
+    security_group: default
+    instance_type: "{{ instance_type }}"
+    image_id: "{{ image_id }}"
+    instance_initiated_shutdown_behavior: stop
+    termination_protection: yes
+    vpc_subnet_id: "{{ vpc_subnet_id }}"
+    network:
+      assign_public_ip: no
+    ebs_optimized: false
+    user_data: "{{ lookup('file', 'user-data.sh') }}"
+    tags:
+      Name: "{{ tag_name }}"
+      Ambiente: "{{ tag_ambiente }}"
+      Owner: "{{ tag_owner }}"
+    count: "{{ count }}"
+    wait: true
+    wait_timeout: 300
+
+- name: EC2 | Getting instance info
+  amazon.aws.ec2_instance_info:
+    profile: "{{ aws_profile }}"
+    region: "{{ region }}"
+    filters:
+      "tag:Name": "{{ tag_name }}"
+  register: ec2info
+
+- name: EC2 | Show instance info
+  ansible.builtin.debug:
+    msg: "{{ ec2info }}"
+
+...

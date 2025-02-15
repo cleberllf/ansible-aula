@@ -1,0 +1,9 @@
+---
+# handlers file for nginx
+- name: Restarting nginx
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: true
+    daemon_reload: true
+...

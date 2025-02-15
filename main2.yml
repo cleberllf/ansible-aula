@@ -1,0 +1,12 @@
+---
+- name: Main Playbook
+  hosts: all
+  roles:
+    - linux-update
+    - role: '/tmp/webserver'
+      vars:
+        http_port: 8080
+        max_clients: 200
+      tags: 
+        - web
+...

@@ -1,0 +1,11 @@
+---
+- name: Ansible Include Roles
+  hosts: rocky9
+  tasks:
+    - ansible.builtin.include_role:
+        name: linux-update
+        vars_from: vars.yml
+        vars:
+          a: b
+          c: d
+...
