@@ -1,16 +1,14 @@
 ---
-
 - name: Ansible Register
   hosts: all
   tasks:
     - name: SISOP | Find files
-      find:
+      ansible.builtin.find:
         path: /tmp
         patterns: '*.cfg'
       register: output
 
     - name: SISOP | Show files
-      debug:
+      ansible.builtin.debug:
         msg: "{{ output }}"
-
 ...

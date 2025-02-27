@@ -1,5 +1,4 @@
 ---
-
 - name: Testing TAG
   hosts: all
   tasks:
@@ -23,5 +22,4 @@
         group: vagrant
         mode: 0644
       tags: copy
-
 ...

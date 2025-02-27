@@ -1,0 +1,13 @@
+---
+- name: Ansible Prompt | Creating user on Linux
+  hosts: all
+  vars_files: passwd.yml
+  tasks:
+    - name: USER | Add User
+      ansible.builtin.user:
+        name: "alice"
+        comment: "User create by Ansible"
+        shell: "/bin/bash"
+        home: "/home/alice"
+        password: "{{ password }}"
+...

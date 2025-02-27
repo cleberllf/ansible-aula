@@ -6,4 +6,5 @@
       ansible.builtin.debug:
         msg: "{{ message }}"
 ...
+
 #ansible-playbook --extra-vars message="Oi" playbooks/6_VarsRunTime.yml

@@ -1,5 +1,4 @@
 ---
-
 - name: Ansible Conditionals Bool
   hosts: rocky9
   vars:
@@ -15,5 +14,4 @@
       ansible.builtin.debug:
         msg: "CRITICAL! Make backup."
       when: not backup
-
 ...

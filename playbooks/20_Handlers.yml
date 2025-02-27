@@ -8,12 +8,12 @@
        regexp: 'listen 80 default_server;'
        replace: 'listen {{ ansible_default_ipv4.address }}:80 default_server;'
        notify: Restart Nginx
- 
+
    handlers:
     - name: Restart Nginx
       ansible.builtin.service:
 #      ansible.builtin.systemd:
        name: nginx
        state: restarted
-       enabled: yes
+       enabled: true
 ...

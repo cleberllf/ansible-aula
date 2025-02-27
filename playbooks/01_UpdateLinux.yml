@@ -1,5 +1,4 @@
 ---
-
 - name: Update Rocky Linux Servers - Starting Deploy
   hosts: rocky9
   tasks:
@@ -7,7 +6,7 @@
       ansible.builtin.dnf:
         name: "*"
         state: latest
-        update_cache: yes
+        update_cache: true
 - name: Update Debian Linux Servers - Starting Deploy
   hosts: debian12
   tasks:
@@ -15,5 +14,4 @@
       ansible.builtin.apt: name="*" state=latest
     - name: Debian Like | Upgrade System
       ansible.builtin.apt: upgrade=dist autoclean=yes autoremove=yes
-
-...     
+...

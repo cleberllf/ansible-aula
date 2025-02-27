@@ -9,7 +9,7 @@
       prompt: Qual é a sua senha?
       private: true # Opcional, pois o padrão já é true
       encrypt: "md5_crypt" # Requer o passlib | pip3 install passlib
-      confirm: yes
+      confirm: true
       salt_size: 7
     - name: shell
       prompt: Qual o seu shell?
