@@ -15,11 +15,15 @@ redhat
 debian
 
 [redhat]
-rocky9 ansible_host=192.168.0.250
-centos7 ansible_host=192.168.0.251
+#rocky9 ansible_host=192.168.0.250
+rocky9 ansible_host=192.168.31.250
+#centos7 ansible_host=192.168.0.251
+centos7 ansible_host=192.168.31.251
 
 [debian]
-debian12 ansible_host=192.168.0.252
+#debian12 ansible_host=192.168.0.252
+debian12 ansible_host=192.168.31.252
 
 #[windows]
 #winserver12 ansible_host=192.168.0.253
+#winserver12 ansible_host=192.168.31.253
