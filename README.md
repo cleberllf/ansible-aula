@@ -9,6 +9,7 @@ Este repositório contém exemplos, playbooks e roles para praticar e aprender A
 ## Sumário
 
 - [Ansible Aula](#ansible-aula)
+  - [Sumário](#sumário)
   - [Estrutura do Repositório](#estrutura-do-repositório)
   - [Playbooks](#playbooks)
     - [Lista de Playbooks Disponíveis](#lista-de-playbooks-disponíveis)
@@ -232,13 +233,27 @@ Cada role inclui:
 ### Configuração do Ambiente
 
 ```bash
-# Instalação do Ansible (Ubuntu/Debian)
+# Para Ubuntu/Debian
 sudo apt update
 sudo apt install ansible
 
-# Instalação das dependências Python
-pip install boto3 pymysql cryptography
+# Para Red Hat/Oracle Linux/Alma Linux/Rocky Linux
+sudo dnf update
+sudo dnf install epel-release # Habilita o repositório EPEL
+sudo dnf install ansible
+
+# Para Fedora
+sudo dnf update
+sudo dnf install ansible
+
+# Instalação das dependências Python (comum a todos os sistemas)
+python3 -m pip install --user boto3 pymysql cryptography
+
+# Verificação da instalação
+ansible --version
 ```
+
+**Nota**: Para sistemas baseados em Red Hat (RHEL, Oracle Linux, Alma Linux, Rocky Linux), o repositório EPEL (Extra Packages for Enterprise Linux) é necessário pois contém o pacote do Ansible e suas dependências.
 
 ## Como Contribuir
 
