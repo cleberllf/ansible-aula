@@ -9,7 +9,6 @@ Este repositório contém exemplos, playbooks e roles para praticar e aprender A
 ## Sumário
 
 - [Ansible Aula](#ansible-aula)
-  - [Sumário](#sumário)
   - [Estrutura do Repositório](#estrutura-do-repositório)
   - [Playbooks](#playbooks)
     - [Lista de Playbooks Disponíveis](#lista-de-playbooks-disponíveis)
