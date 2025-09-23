@@ -3,7 +3,6 @@
 [![Ansible Version](https://img.shields.io/badge/Ansible-7.0%2B-red.svg)](https://docs.ansible.com/)
 [![Python Version](https://img.shields.io/badge/Python-2.6%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Multiple-yellow.svg)](#licença)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 Este repositório contém exemplos, playbooks e roles para praticar e aprender Ansible, com foco em automação de infraestrutura e gerenciamento de configurações. Ele inclui exemplos de uso de variáveis, prompts, templates, condições e integração com serviços como AWS.
 
