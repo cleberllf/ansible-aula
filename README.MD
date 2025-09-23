@@ -1,6 +1,33 @@
 # Ansible Aula
 
+[![Ansible Version](https://img.shields.io/badge/Ansible-7.0%2B-red.svg)](https://docs.ansible.com/)
+[![Python Version](https://img.shields.io/badge/Python-2.6%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Multiple-yellow.svg)](#licença)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 Este repositório contém exemplos, playbooks e roles para praticar e aprender Ansible, com foco em automação de infraestrutura e gerenciamento de configurações. Ele inclui exemplos de uso de variáveis, prompts, templates, condições e integração com serviços como AWS.
+
+## Sumário
+
+- [Ansible Aula](#ansible-aula)
+  - [Sumário](#sumário)
+  - [Estrutura do Repositório](#estrutura-do-repositório)
+  - [Playbooks](#playbooks)
+    - [Lista de Playbooks Disponíveis](#lista-de-playbooks-disponíveis)
+  - [Inventário](#inventário)
+  - [Roles](#roles)
+    - [Roles Disponíveis](#roles-disponíveis)
+  - [Exemplo de Uso](#exemplo-de-uso)
+    - [Playbook com Variáveis](#playbook-com-variáveis)
+    - [Role para EC2 na AWS](#role-para-ec2-na-aws)
+  - [Requisitos](#requisitos)
+    - [Requisitos Básicos](#requisitos-básicos)
+    - [Dependências Específicas](#dependências-específicas)
+    - [Configuração do Ambiente](#configuração-do-ambiente)
+  - [Como Contribuir](#como-contribuir)
+    - [Diretrizes de Contribuição](#diretrizes-de-contribuição)
+  - [Licença](#licença)
+  - [Autor](#autor)
 
 ## Estrutura do Repositório
 
@@ -56,11 +83,41 @@ Este repositório contém exemplos, playbooks e roles para praticar e aprender A
 
 ## Playbooks
 
-Os playbooks estão localizados na pasta `playbooks/` e cobrem diversos tópicos, como:
+Os playbooks estão localizados na pasta `playbooks/` e cobrem diversos tópicos fundamentais do Ansible. Cada playbook é nomeado de forma intuitiva e contém comentários explicativos sobre seu funcionamento.
 
-- **Uso de Variáveis**: Exemplos de definição e uso de variáveis em playbooks, como no `03_Vars.yml`.
-- **Prompt de Variáveis**: Solicitação de entrada do usuário em tempo de execução, como no `07_VarsPrompt.yml`.
-- **Condições e Filtros**: Uso de condições e filtros para controle de execução de tarefas.
+### Lista de Playbooks Disponíveis
+
+1. **Operações Básicas**
+   - `01_UpdateLinux.yml`: Atualização de sistemas Linux
+   - `02_Tags.yml`: Uso de tags para execução seletiva de tarefas
+
+2. **Gerenciamento de Variáveis**
+   - `03_Vars.yml`: Exemplos de definição e uso de variáveis
+   - `04_VarsFiles.yml`: Uso de arquivos externos de variáveis
+   - `05_VarsAnsibleFacts.yml`: Trabalhando com Ansible Facts
+   - `06_VarsRunTime.yml`: Variáveis em tempo de execução
+   - `07_VarsPrompt.yml`: Solicitação de entrada do usuário
+
+3. **Registro e Manipulação de Dados**
+   - `08_RegisterOutputs.yml`: Captura de saída de comandos
+   - `09_RegisterFilters.yml`: Uso de filtros para manipulação de dados
+
+4. **Controle de Fluxo**
+   - `10_AnsibleConditionals.yml`: Condicionais básicas
+   - `11_AnsibleConditionalsBool.yml`: Condicionais booleanas
+   - `12_Blocks.yml`: Agrupamento de tarefas em blocos
+
+5. **Loops e Iterações**
+   - `14_Loop.yml`: Loops básicos
+   - `15_LoopMultipleOptions.yml`: Múltiplas opções em loops
+   - `16_LoopWithItems.yml`: Uso do with_items
+   - `17_LoopControl.yml`: Controle avançado de loops
+   - `18_LoopInner.yml`: Loops aninhados
+   - `19_WithSequence.yml`: Sequências em loops
+
+6. **Handlers e Roles**
+   - `20_Handlers.yml`: Manipuladores de eventos
+   - `21_IncludeRoles.yml`: Inclusão e uso de roles
 
 ## Inventário
 
@@ -71,17 +128,52 @@ O inventário está localizado na pasta `inventory/` e inclui arquivos como:
 
 ## Roles
 
-As roles estão organizadas na pasta `roles/` e incluem:
+As roles estão organizadas na pasta `roles/` e seguem as melhores práticas de estruturação do Ansible. Cada role é independente e pode ser reutilizada em diferentes projetos.
 
-- **aws_ec2**: Criação de instâncias EC2 na AWS.
-- **install-packages**: Instalação de pacotes em sistemas Linux.
-- **linux-update**: Atualização de sistemas Linux.
-- **manage-files**: Gerenciamento de arquivos.
-- **mysql-restoredb**: Restauração de bancos de dados MySQL.
-- **nginx**: Configuração de servidores Nginx.
-- **using-templates**: Uso de templates para geração de arquivos.
+### Roles Disponíveis
 
-Cada role possui um `README.md` com detalhes sobre variáveis, dependências e exemplos de uso.
+1. **💻 AWS EC2 (`aws_ec2`)**
+   - Criação e gerenciamento de instâncias EC2 na AWS
+   - Configuração de security groups e network
+   - Suporte a user-data para inicialização
+   - Requer: `boto3` e credenciais AWS configuradas
+
+2. **📦 Instalação de Pacotes (`install-packages`)**
+   - Suporte para múltiplos gerenciadores de pacotes (apt, yum, dnf)
+   - Instalação em lote de pacotes
+   - Configuração de repositórios personalizados
+
+3. **🔄 Atualização Linux (`linux-update`)**
+   - Atualização de sistemas Debian/Ubuntu e RedHat/CentOS
+   - Gerenciamento de cache de pacotes
+   - Suporte a reinicialização controlada
+
+4. **📁 Gerenciamento de Arquivos (`manage-files`)**
+   - Criação e manipulação de arquivos e diretórios
+   - Controle de permissões e propriedade
+   - Compactação e descompactação de arquivos
+
+5. **🗄️ MySQL Restore (`mysql-restoredb`)**
+   - Restauração de backups do MySQL
+   - Suporte a compressão de arquivos
+   - Gerenciamento de usuários e privilégios
+
+6. **🌐 Nginx (`nginx`)**
+   - Instalação e configuração do Nginx
+   - Gestão de virtual hosts
+   - Configuração de SSL/TLS
+   - Otimização de performance
+
+7. **📋 Templates (`using-templates`)**
+   - Geração dinâmica de configurações
+   - Suporte a variáveis e condicionais
+   - Templates Jinja2 reutilizáveis
+
+Cada role inclui:
+- Documentação detalhada no `README.md`
+- Variáveis padrão em `defaults/main.yml`
+- Testes em `tests/`
+- Handlers e tasks bem organizados
 
 ## Exemplo de Uso
 
@@ -127,9 +219,43 @@ Cada role possui um `README.md` com detalhes sobre variáveis, dependências e e
 
 ## Requisitos
 
-- **Ansible**: 7.0 ou superior.
-- **Python**: >= 2.6.
-- Dependências específicas para roles, como `boto3` para integração com AWS.
+### Requisitos Básicos
+
+- **Ansible**: 7.0 ou superior
+- **Python**: >= 2.6
+- Sistema operacional Linux ou Unix-like
+
+### Dependências Específicas
+
+- `boto3` para roles AWS
+- `pymysql` para roles MySQL
+- `cryptography` para Ansible Vault
+
+### Configuração do Ambiente
+
+```bash
+# Instalação do Ansible (Ubuntu/Debian)
+sudo apt update
+sudo apt install ansible
+
+# Instalação das dependências Python
+pip install boto3 pymysql cryptography
+```
+
+## Como Contribuir
+
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add: nova feature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+### Diretrizes de Contribuição
+
+- Mantenha o padrão de nomenclatura dos arquivos
+- Documente todas as variáveis e dependências
+- Adicione testes para novas funcionalidades
+- Mantenha a compatibilidade com as versões suportadas
 
 ## Licença
 
@@ -138,3 +264,6 @@ Este repositório utiliza múltiplas licenças, dependendo da role. Consulte os 
 ## Autor
 
 Este repositório foi desenvolvido por **Cleber Lima** como parte do curso *Ansible para SysAdmin* na Udemy.
+
+---
+⭐ Se este projeto foi útil para você, considere dar uma estrela!
