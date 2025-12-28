@@ -255,25 +255,6 @@ ansible --version
 
 **Nota**: Para sistemas baseados em Red Hat (RHEL, Oracle Linux, Alma Linux, Rocky Linux), o repositório EPEL (Extra Packages for Enterprise Linux) é necessário pois contém o pacote do Ansible e suas dependências.
 
-## Como Contribuir
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add: nova feature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-### Diretrizes de Contribuição
-
-- Mantenha o padrão de nomenclatura dos arquivos
-- Documente todas as variáveis e dependências
-- Adicione testes para novas funcionalidades
-- Mantenha a compatibilidade com as versões suportadas
-
-## Licença
-
-Este repositório utiliza múltiplas licenças, dependendo da role. Consulte os arquivos `README.md` de cada role para mais detalhes.
-
 ## Autor
 
 Este repositório foi desenvolvido por **Cleber Lima** como parte do curso *Ansible para SysAdmin* na Udemy.
